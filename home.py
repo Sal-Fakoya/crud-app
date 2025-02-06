@@ -23,17 +23,20 @@ def run_home():
             st.info("Details")
             task_result = get_task_by_task(select_task)
             
-            task_doer = task_result[0][0]
-            st.write(f"Task Doer: {task_doer}")
-            
-            task = task_result[0][1]
-            st.write(f"Task     : {task}")
-            
-            task_status = task_result[0][2]
-            st.write(f"Task status: {task_status}")
-            
-            task_due_date = task_result[0][3]
-            st.text(f"Task Due Dtae: {task_due_date}")
+            try: 
+                task_doer = task_result[0][0]
+                st.write(f"Task Doer: {task_doer}")
+                
+                task = task_result[0][1]
+                st.write(f"Task     : {task}")
+                
+                task_status = task_result[0][2]
+                st.write(f"Task status: {task_status}")
+                
+                task_due_date = task_result[0][3]
+                st.text(f"Task Due Date: {task_due_date}")
+            except Exception as e:
+                st.info("Please add a new task")
         
     elif choice == "Search":
         st.subheader("Search")
