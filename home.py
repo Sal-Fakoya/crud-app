@@ -35,8 +35,10 @@ def run_home():
                 
                 task_due_date = task_result[0][3]
                 st.text(f"Task Due Date: {task_due_date}")
-            except Exception as e:
+            except IndexError as e:
                 st.info("Please add a new task")
+            except Exception as e:
+                st.info("Nothing to view here!")
         
     elif choice == "Search":
         st.subheader("Search")
